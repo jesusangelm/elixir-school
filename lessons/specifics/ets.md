@@ -149,7 +149,7 @@ iex> :ets.match_object(:user_lookup, {:"$1", :"_", :"$3"})
  {"spork", 30, ["ruby", "elixir"]}]
 ```
 
-Although `select/2` allows for finer control over what and how we retrieve records, the syntax is quite unfriendly and will only grow more so.  Thankfully for us there's `fun2ms/1` which can transform a function into a match_spec, now we are able to create queries using the familiar function syntax.
+Although `select/2` allows for finer control over what and how we retrieve records, the syntax is quite unfriendly and will only become more so.  To handle this the ETS module includes `fun2ms/1`, which converts a given function into a match_spec.  With `fun2ms/1` we can create queries using a familiar function syntax.
 
 Let's use `fun2ms/2` and `select/2` to find all usernames with 2 or more languages:
 
